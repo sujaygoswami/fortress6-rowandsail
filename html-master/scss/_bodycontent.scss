@@ -1,8 +1,78 @@
 .rowandsail-boat-purchase-form {
     color: var(--site-text-color);
 
+    .pull-text-right{
+        text-align: right;
+    }
+
+    .pos-relative{
+        position: relative;
+    }
+
+    .form-steps{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+
+        .step-number{
+            ul{
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+
+                li{
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    position: relative;
+                    span{
+                        border: 3px solid;
+                        text-align: center;
+                        line-height: 34px;
+                        font-weight: bold;
+                        border-radius: 100%;
+                        display: block;
+                        opacity: 0.5;
+                    }
+                    .fa{
+                        position: absolute;
+                        right: 0px;
+                        top: -10px;
+                        pointer-events: none;
+                        z-index: 1;
+                        opacity: 1;
+                    }
+                    &.active{
+                        span{
+                            opacity: 1;
+                            color: var(--site-primary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .default-row-gap{
         row-gap: var(--bs-gutter-x);
+    }
+
+
+    .addon-module{
+        .card-body{
+            position: relative;
+
+            .badge{
+                background-color: var(--site-primary-color);
+                color: white;
+                position: absolute;
+                right: 2px;
+                top: 2px;
+            }
+        }
     }
 
 
@@ -26,6 +96,23 @@
 
         .addon-part-input{
             width: 60%;
+            position: relative;
+            
+
+            .icon-field{
+                text-align: center;
+                i{
+                    display: inline-block;
+                    border-bottom: 1px solid var(--site-primary-color);
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+
+                    img{
+                        height: 40px;
+                        width: auto;
+                    }
+                }
+            }
         }   
 
         .addon-input{
@@ -41,6 +128,7 @@
             appearance: none;
             outline: none;
             pointer-events: none;
+            width: 100%;
         }
     }
 
@@ -85,16 +173,19 @@
 
             .person-count{
                 position: absolute;
-                right: 10px;
-                top: 10px;
-                border-radius: 3px;
+                right: 0px;
+                bottom: 0px;
+                // border-radius: 3px;
                 overflow: hidden;
-                border: 1px solid;
+                border: 1px solid var(--site-primary-color);
                 display: flex;
                 color: var(--site-primary-color);
                 z-index: 2;
                 visibility: hidden;
                 pointer-events: none;
+                width: 100%;
+                display: flex;
+                background-color: var(--site-primary-color);
 
                 span{
                     text-align: center;
@@ -102,11 +193,28 @@
                     padding: 5px;
                     border-right: 1px solid;
                     position: relative;
+                    flex-grow: 1;
+                    width: 50%;
+
+                    i, em{
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+
+                    em{
+                        font-style: normal;
+                        position: relative;
+                        z-index: 1;
+                        padding-right: 5px;
+                        pointer-events: none;
+                        font-size: 12px;
+                    }
 
                     .fa{
                         position: relative;
                         z-index: 1;
                         pointer-events: none;
+                        font-size: 26px;
                     }
 
                     .clone-box{
@@ -135,7 +243,11 @@
                             & + .clone-box{
                                 background-color: var(--site-primary-color);
 
-                                & + .fa, & + .fa + .fa{
+                                & + em{
+                                    color: white;
+                                }
+
+                                & + .fa, & + em + .fa, & + .fa + .fa, & + em + .fa + .fa{
                                     color: white;
                                 }
                             }
@@ -163,7 +275,7 @@
                 opacity: 0;
 
                 &:checked{
-                    & + .person-count{
+                    & + .boat-img > .person-count{
                         visibility: visible;
                         pointer-events: auto;
                     }

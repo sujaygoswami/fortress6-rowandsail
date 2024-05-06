@@ -192,6 +192,8 @@ jQuery(window).load(function(){
        jQuery(this).children('.equal-block').matchHeight();
   });
 
+  jQuery('.rowandsail-boat-purchase-form .step-1 .selection-module .card-text').matchHeight();
+
 
 
 

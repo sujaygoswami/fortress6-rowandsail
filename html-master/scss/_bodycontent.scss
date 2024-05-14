@@ -1,6 +1,31 @@
 .rowandsail-boat-purchase-form {
     color: var(--site-text-color);
 
+    .btn-primary{
+        border-color: var(--site-primary-color);
+        background-color: var(--site-primary-color);
+
+        &:hover, &:focus, &:active{
+            border-color: var(--site-primary-color) !important;
+            background-color: var(--site-primary-color) !important;
+        }
+    }
+
+    .text-primary{
+        color: var(--site-primary-color) !important;
+    }
+
+    .form-field-error{
+        .form-control, .form-check-input{
+            border-color: var(--site-primary-color);
+            color: var(--site-primary-color);
+
+            &::placeholder{
+                color: var(--site-primary-color);
+            }
+        }
+    }
+
     .pull-text-right{
         text-align: right;
     }

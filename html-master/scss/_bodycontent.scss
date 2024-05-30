@@ -324,5 +324,19 @@
             }
         }
     }
+
+    // new addition 30.05.2024
+    .addon-module{
+        .card-body{
+            .addon-field{
+                & + .badge{
+                    top: inherit;
+                    bottom: 2px;
+                }
+            }
+            
+        }
+    }
+    // new addition 30.05.2024
     
 }

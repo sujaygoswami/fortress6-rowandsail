@@ -1,0 +1,141 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"> 
+    <div class="step-header mb-3" data-form="orderform">
+        <h3><f:translate key="step_no_label" />{fkey}: <f:translate key="payment_tab_label" /></h3>
+    </div>
+    <input type="hidden"  name="tx_chiliproductconfigurator_plist[product_noperson]" id="tx_chiliproductconfigurator_product_noperson" value="0">
+    <!-- purchase detail info module -->
+    <div class="purchase-detail-info-module productconfigurator_orderform" >
+        <div class="row my-row default-row-gap">
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_vorname" class="form-label"><f:translate key='vorname_label' />*</label>
+                <input type="text" class="form-control productconfigurator_required" name="tx_chiliproductconfigurator_plist[vorname]" id="tx_chiliproductconfigurator_vorname"
+                    placeholder="<f:translate key='vorname_label' />">
+                    <div class="error_message">Required</div>
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_nachname" class="form-label"><f:translate key='nachname_label' />*</label>
+                <input type="text" class="form-control productconfigurator_required" name="tx_chiliproductconfigurator_plist[nachname]" id="tx_chiliproductconfigurator_nachname"
+                    placeholder="<f:translate key='nachname_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_email" class="form-label"><f:translate key='email_label' />*</label>
+                <input type="text" class="form-control productconfigurator_required" name="tx_chiliproductconfigurator_plist[email]" id="tx_chiliproductconfigurator_email"
+                    placeholder="<f:translate key='email_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_telefon" class="form-label"><f:translate key='telefon_label' /></label>
+                <input type="text" class="form-control" name="tx_chiliproductconfigurator_plist[telefon]" id="tx_chiliproductconfigurator_telefon"
+                    placeholder="<f:translate key='telefon_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_firma" class="form-label"><f:translate key='firma_label' /></label>
+                <input type="text" class="form-control" name="tx_chiliproductconfigurator_plist[firma]" id="tx_chiliproductconfigurator_firma"
+                    placeholder="<f:translate key='firma_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_hnumber" class="form-label"><f:translate key='hausnummer_label' />*</label>
+                <input type="text" class="form-control productconfigurator_required"  name="tx_chiliproductconfigurator_plist[hnumber]" id="tx_chiliproductconfigurator_hnumber" 
+                    placeholder="<f:translate key='hausnummer_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_address" class="form-label"><f:translate key='address_label' /></label>
+                <input type="text" class="form-control" name="tx_chiliproductconfigurator_plist[address]" id="tx_chiliproductconfigurator_address" 
+                    placeholder="<f:translate key='address_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="exampleFormControlInput1" class="form-label"><f:translate key='plz_label' />*</label>
+                <input type="text" class="form-control productconfigurator_required" name="tx_chiliproductconfigurator_plist[plz]" id="tx_chiliproductconfigurator_plz" 
+                    placeholder="<f:translate key='plz_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_ort" class="form-label"><f:translate key='ort_label' />*</label>
+                <input type="text" class="form-control productconfigurator_required" name="tx_chiliproductconfigurator_plist[ort]" id="tx_chiliproductconfigurator_ort"
+                    placeholder="<f:translate key='ort_label' />">
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator">
+                <label for="tx_chiliproductconfigurator_land" class="form-label"><f:translate key='land_label' />*</label>
+                <select class="form-control productconfigurator_required" name="tx_chiliproductconfigurator_plist[land]" id="tx_chiliproductconfigurator_land">
+                    <f:for each="{countryData}" as="country">
+                        <option value="{country.uid}" data-shipping1="{country.shipping1}" data-shipping2="{country.shipping2}">{country.title}</option>
+                     </f:for>
+                </select>    
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col form-chiliproductconfigurator" id="tx_chiliproductconfigurator_payment_box">
+                <label for="tx_chiliproductconfigurator_payment" class="form-label mb-2"><f:translate key='payment_label' />*</label>
+                <!-- <select class="form-control " name="tx_chiliproductconfigurator_plist[payment]" id="tx_chiliproductconfigurator_payment">
+                    <option value="" ></option>
+                    <f:for each="{payment_options}" key="key" as="val">
+                        <option value="{key}" >{val}</option>
+                     </f:for>
+                </select> -->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Paypal
+                    </label>
+                    <img src="<f:uri.image src='EXT:chili_productconfigurator/Resources/Public/Images/de-pp-logo-200px.png' />" >
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Prepayment
+                    </label>
+                  </div>    
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-md-6 col-12 my-col" id="payment_info_box">
+                <label  class="form-label"></label><br>
+                <span id="payment_info">TOTAL</span>
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-12 my-col ">
+                <div class="form-check form-chiliproductconfigurator ">
+                    <input class="form-check-input" type="checkbox" value="1"  name="tx_chiliproductconfigurator_plist[agb]" id="tx_chiliproductconfigurator_agb">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        <f:translate key='agb_label' /><a href="/privacy-policy" class="text-primary">Privacy policy</a>
+                    </label>
+                  </div>
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-12 my-col ">
+                <div class="form-check form-chiliproductconfigurator ">
+                    <input class="form-check-input" type="checkbox" value="1"  name="tx_chiliproductconfigurator_plist[dsgvo]" id="tx_chiliproductconfigurator_dsgvo">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        <f:translate key='dsgvo_label' />
+                    </label>
+                  </div>
+            </div>
+            <!-- col -->
+            <!-- col -->
+            <div class="col-12 my-col">
+                <input type="submit" class="btn btn-dark text-white" value="<f:translate key='send_label' />">
+            </div>
+            <!-- col -->
+        </div>
+    </div>
+    <!-- purchase detail info module -->
+</html>
